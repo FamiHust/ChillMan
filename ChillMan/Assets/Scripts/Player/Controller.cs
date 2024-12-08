@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
     public Joystick joystick;
     private bool isDie = false;
     private bool isGameOver = false;
+    private bool isGameWin = false;
 
     private bool isWalking = false;
     public float maxBattery = 100f; // Mức pin tối đa
@@ -67,7 +68,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
-        if (isGameOver) // Kiểm tra nếu game over
+        if (isGameOver && isGameWin) // Kiểm tra nếu game over
         {
             return; // Không thực hiện gì thêm
         }
@@ -144,7 +145,6 @@ public class Controller : MonoBehaviour
         {
             currentHealth = 0;
             GameOver();
-            //SoundManager.PlaySound(SoundType.PLAYERDIE);
         }
         healthBar.UpdateBar(currentHealth, maxHealth);
 
@@ -168,8 +168,18 @@ public class Controller : MonoBehaviour
 
     public void GameWin()
     {
+        isGameWin = true;
+        StartCoroutine(GameWinCoroutine());
+        //Time.timeScale = 0;
+        //WinPanel.SetActive(true);
+    }
+
+    private IEnumerator GameWinCoroutine()
+    {
+        yield return new WaitForSeconds(0.3f);
         Time.timeScale = 0;
         WinPanel.SetActive(true);
+        SoundManager.PlaySound(SoundType.VICTORY);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -193,7 +203,6 @@ public class Controller : MonoBehaviour
         {
             UnlockNewLevel();
             GameWin();
-            SoundManager.PlaySound(SoundType.VICTORY);
         }
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float remainingTime;
     [SerializeField] private int replayLevel;
     private bool isPaused = false;
+    private bool isGameOver = false;
     public GameObject OverPanel;
 
     private bool isBlinking = false; // Biến kiểm tra trạng thái nhấp nháy
@@ -63,6 +65,13 @@ public class Timer : MonoBehaviour
 
     public void GameOver()
     {
+        isGameOver = true;
+        StartCoroutine(GameOverCoroutine());
+    }
+
+    private IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
         Time.timeScale = 0;
         OverPanel.SetActive(true);
         SoundManager.PlaySound(SoundType.PLAYERDIE);
@@ -70,6 +79,7 @@ public class Timer : MonoBehaviour
 
     public void MapLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(2);
     }
 
