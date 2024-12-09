@@ -7618,7 +7618,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CHILL MAN
+  m_text: 'DeadLight
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb08dbf653810b74facf7766faf566fa, type: 2}
   m_sharedMaterial: {fileID: -7249907528464561802, guid: fb08dbf653810b74facf7766faf566fa, type: 2}
