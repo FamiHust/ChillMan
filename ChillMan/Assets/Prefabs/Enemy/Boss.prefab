@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 5872367180766782600}
   - component: {fileID: 70362677876886555}
   - component: {fileID: 3684982581974708906}
+  - component: {fileID: 3182522318654677006}
+  - component: {fileID: 8459973324313417651}
   - component: {fileID: 2702080271505116112}
   - component: {fileID: 6198677341871953473}
   - component: {fileID: 6484928768462464877}
@@ -157,6 +159,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAwarenessDistance: 10
+--- !u!114 &3182522318654677006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703505943096493880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1db109b5f231748a2f36e06bc67cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8459973324313417651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703505943096493880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f45589114d056342b1a4b36255ebf23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+  gameObject: {fileID: 5703505943096493880}
 --- !u!50 &2702080271505116112
 Rigidbody2D:
   serializedVersion: 5

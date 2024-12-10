@@ -58,6 +58,7 @@ public class Boss_Movement : MonoBehaviour
 
         if (other.CompareTag("Spotlight"))
         {
+            InvokeRepeating("TakeDam", 0, 0.2f);
             SoundManager.PlaySound(SoundType.DIE);
         }
     }
@@ -68,6 +69,11 @@ public class Boss_Movement : MonoBehaviour
         {
             controller = null;
             animator.SetBool("isAttacking", false);
+            CancelInvoke();
+        }
+
+        if (other.CompareTag("Spotlight"))
+        {
             CancelInvoke();
         }
     }
