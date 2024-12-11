@@ -6,7 +6,7 @@ using System.Collections;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
+    public float remainingTime;
     [SerializeField] private int replayLevel;
     private bool isPaused = false;
     private bool isGameOver = false;
