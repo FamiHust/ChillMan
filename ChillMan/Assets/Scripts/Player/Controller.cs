@@ -76,8 +76,8 @@ public class Controller : MonoBehaviour
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
 
-        // moveInput.x = joystick.Horizontal;
-        // moveInput.y = joystick.Vertical;
+        moveInput.x = joystick.Horizontal;
+        moveInput.y = joystick.Vertical;
 
         if (moveInput != Vector2.zero)
         {

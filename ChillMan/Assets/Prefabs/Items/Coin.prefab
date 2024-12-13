@@ -124,8 +124,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.027224397, y: -0.042046662}
-  m_Radius: 0.30838746
+  m_Offset: {x: -0.008609831, y: -0.026091337}
+  m_Radius: 0.22595161
 --- !u!114 &5828309759568945058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1897659618850719325, guid: d7c6c0c589babc442b3ed10fbd5ef3ce, type: 3}
+  totalCoins: 0
 --- !u!95 &6937609410591105331
 Animator:
   serializedVersion: 7

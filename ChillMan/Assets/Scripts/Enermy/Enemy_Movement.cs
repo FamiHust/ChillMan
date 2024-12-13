@@ -19,7 +19,7 @@ public class Enemy_Movement : MonoBehaviour
         animator = GetComponent<Animator>();
         originalSpeed = aiPath.maxSpeed; // Lưu tốc độ gốc
     }
-
+    
     private void TakeDam()
     {
         health.TakeDamage(1);

@@ -8,10 +8,12 @@ public class Health : MonoBehaviour
 {
     public int maxHealth;
     [HideInInspector] public int currentHealth;
+
     private bool isDie = false;
     private SpriteRenderer spriteRenderer; // Thêm biến để lưu trữ SpriteRenderer
     private Color originalColor; // Màu sắc gốc
     public GameObject gameObject;
+    public GameObject floatingTextPrefab;
 
     HealthBar healthBar;
 
@@ -31,6 +33,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        showDamage(damage.ToString());
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
@@ -42,6 +45,15 @@ public class Health : MonoBehaviour
         }
 
         StartCoroutine(FlashGrey());
+    }
+
+    public void showDamage(string text)
+    {
+        if (floatingTextPrefab)
+        {
+            GameObject prefab = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
     }
 
     private IEnumerator FlashGrey()

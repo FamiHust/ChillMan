@@ -306,9 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f45589114d056342b1a4b36255ebf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 5
   currentHealth: 0
   gameObject: {fileID: 1991252433508760806}
+  floatingTextPrefab: {fileID: 971531820320256618, guid: 7759bc8c8f804cb4f8ec4550b2a99de8, type: 3}
 --- !u!114 &8929674097696887648
 MonoBehaviour:
   m_ObjectHideFlags: 0
